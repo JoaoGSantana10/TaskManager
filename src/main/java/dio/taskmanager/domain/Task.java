@@ -23,4 +23,10 @@ public class Task {
         this.description = description;
         this.status = TaskStatus.PENDING; // é iniciada com os status pendente
     }
+
+    public void update(Optional<String> title, Optional<String> description, Optional<TaskStatus> status){
+        title.ifPresent(this::setTitle);
+        description.ifPresent(d -> this.setDescription(Optional.of(d)));
+        status.ifPresent(this::setStatus);
+    }
 }
