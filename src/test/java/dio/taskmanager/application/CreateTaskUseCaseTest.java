@@ -41,7 +41,7 @@ class CreateTaskUseCaseTest {
         // then
         assertNotNull(output);
         assertNotNull(output.id());
-        assertNotNull("Estudar Java", output.tittle());
+        assertNotNull("Estudar Java", output.title());
         assertEquals(Optional.of("Finalizar o módulo de Records"), output.description());
 
         verify(repository, times(1)).save(any(Task.class));
